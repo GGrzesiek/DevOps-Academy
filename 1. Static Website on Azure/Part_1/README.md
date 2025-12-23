@@ -26,7 +26,7 @@ I have to navigate to Azure DNS zone (example.com) and add a record set. Here ar
 
 I can validate records correctly by querying www.example.com using nslookup
 
-| Alias     | (default domain name) mystaticpageendpoint-fwengbdddudxb0er.z01.azurefd.net |
+4. Azure resources/modules
 
 -Resource Group
 -Storage Account
