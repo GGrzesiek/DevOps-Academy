@@ -17,15 +17,16 @@ I can add a certifiacate by adding domain in my front door resource
 
 I have to navigate to Azure DNS zone (example.com) and add a record set. Here are values:
 | Setting | Value |
+|:-------- |:--------:|
 | Name     | www   |
 | Type     | CNAME   |
 | TTL     | 600   |
 | TTL unit   | Seconds   |
-| Alias     | (default domain name) https://mystaticpageendpoint-fwengbdddudxb0er.z01.azurefd.net/ |
+| Alias     | (default domain name) mystaticpageendpoint-fwengbdddudxb0er.z01.azurefd.net |
 
 I can validate records correctly by querying www.example.com using nslookup
 
-4. Azure resources/modules
+| Alias     | (default domain name) mystaticpageendpoint-fwengbdddudxb0er.z01.azurefd.net |
 
 -Resource Group
 -Storage Account
