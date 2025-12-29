@@ -1,5 +1,4 @@
-output "primary_key" {
-    description = "The primary access key for the storage account"
-    value = azurerm_storage_account.sa.primary_access_key
-    sensitive   = true
+output "primary_web_host" {
+  description = "The hostname of the static website (without https://)"
+  value       = azurerm_storage_account.static.primary_web_host
 }

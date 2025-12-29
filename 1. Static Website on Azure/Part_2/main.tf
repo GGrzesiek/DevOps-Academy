@@ -1,20 +1,18 @@
-terraform {
-  required_providers {
-    azurerm = {
-      source  = "hashicorp/azurerm"
-      version = "4.0.0"
-    }
+locals {
+  env_locations = {
+    dev  = "West Europe"
+    prod = "North Europe"
   }
+
+  final_location = var.location != "" ? var.location : lookup(local.env_locations, var.environment, "West Europe")
 }
 
-provider "azurerm" {
-  features {}
-}
+resource "azurerm_resource_group" "main" {
+  name     = "${var.prefix}-rg"
+  location = local.final_location
 
-module "storage_account" {
-  source    = "./modules/storage-account"
-
-  saname    = "sadevopsacad01"
-  rgname    = "rg-devopsacad-01"
-  location  = "westus"
+  tags = merge(var.tags, {
+    project = coalesce(try(var.tags["project"], null), "static-web")
+    managed_by = "terraform"
+  })
 }
