@@ -24,6 +24,3 @@ Create infrastructure.
 **4. Destroy**
 Cleanup.
 `terraform destroy -var-file="production.tfvars"`
-
-**5. Things to consider:**
-Using terraform import first instead of creating tfstate locally?
